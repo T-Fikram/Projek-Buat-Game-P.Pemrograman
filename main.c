@@ -64,17 +64,11 @@ int main (int banyakArgumen, char *argumen[]) {
     fread(username, sizeof(char), sizeof(username)/sizeof(char), fpr);
 
     fclose(fpr);
-    char *string[3];
+    char *token = strtok(username, "@");
     char user[50], pass[50];
-    int ctrl = 0;
-
-    string[0] = strtok(username, "@");
-    while(string[ctrl++] != NULL) {
-        string[ctrl] = strtok(NULL, "@");
-    }
-
-    strcpy(user, string[0]);
-    strcpy(pass, string[1]);
+    strcpy(user, token);          
+    token = strtok(NULL, "@");    
+    strcpy(pass, token);
 
     printf("=============================================\n");
     printf("=         Registrasi Anda Berhasil          =\n");
@@ -88,15 +82,13 @@ int main (int banyakArgumen, char *argumen[]) {
     char userLog[20], passLog[20];
     printf("Masukkan Username : ");
     fgets(userLog, sizeof(userLog), stdin);
+    userLog[strcspn(userLog, "\n")] = '\0';
 
     printf("Masukkan Password : ");
     fgets(passLog, sizeof(passLog), stdin);
+    passLog[strcspn(passLog, "\n")] = '\0';
 
-    char userLogin[10], passLogin[10];
-    strcpy(userLogin, argumen[1]);
-    strcpy(passLogin, argumen[2]);
-
-    if((strcmp(userLogin, user)) == 0 && (strcmp(passLogin, pass) == 0)) {
+    if((strcmp(userLog, user)) == 0 && (strcmp(passLog, pass) == 0)) {
         printf("=============================================\n");    
         printf("=            ANDA BERHASIL LOGIN!           =\n");
         printf("=============================================\n");
