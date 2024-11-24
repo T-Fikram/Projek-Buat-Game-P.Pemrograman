@@ -225,6 +225,7 @@ void tampilkanMenu() {
             tampilkanMenu();
         } else {
             salah();
+            getchar();
             gameover();
         }
     }
