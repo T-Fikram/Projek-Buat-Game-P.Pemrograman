@@ -18,6 +18,7 @@ void pertanyaan1();
 void pertanyaan2();
 void pertanyaan3();
 void pertanyaan4();
+void pertanyaan5
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -273,6 +274,25 @@ void tampilkanMenu() {
         printf("4. Hewan apa yang dikenal sebagai predator terbesar di lautan?\n");
         printf("a. Paus pembunuh\tb.  Hiu putih besar\nc. Ubur-ubur raksasa\td. Anemon Laut\n");
         printf("Masukkan jawaban Anda: ");
+        char answer;
+        scanf(" %c", &answer);
+        getchar(); 
+        if (answer == 'a' || answer == 'A') {
+            level++;
+            benar();
+            getchar();
+            tampilkanMenu();
+        } else {
+            salah();
+            getchar();
+            gameover();
+        }
+    }
+
+void pertanyaan5() {
+    printf("5. Hewan apa yang menghasilkan tinta sebagai mekanisme pertahanan?\n");
+    printf("a. Cumi-cumi\tb. Ayam\nc. Udang\td. Ikan pari\n");
+    printf("masukan jawaban anda: ");
         char answer;
         scanf(" %c", &answer);
         getchar(); 
