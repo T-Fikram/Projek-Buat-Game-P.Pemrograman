@@ -26,7 +26,7 @@ int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
 
     if (banyakArgumen != 3) {
-        printf("Harus terdapat 3 argumen saat menjalankan program!\n");
+        printf("Harus terdapat 3 Argumen saat menjalankan program!\n");
         printf("Cara penggunaan : ./main Username Password!\n");
         return 1;
     }
@@ -39,11 +39,11 @@ int main (int banyakArgumen, char *argumen[]) {
 
     char username[50],password[50];
 
-    printf("masukkan username :");
+    printf("Masukkan Username :");
     fgets(username,sizeof(username),stdin);
     username[strcspn(username, "\n")] = '\0';
     
-    printf("masukkan password :");
+    printf("Masukkan Password :");
     fgets(password,sizeof(password),stdin);
     password[strcspn(password, "\n")] = '\0';
 
@@ -79,17 +79,17 @@ int main (int banyakArgumen, char *argumen[]) {
     printf("=============================================\n");
     printf("=         Registrasi Anda Berhasil          =\n");
     printf("=============================================\n");
-    printf("=  Silahkan Login ntuk memulai permainan!   =\n");
+    printf("=  Silahkan Login Untuk Memulai Permainan!   =\n");
     printf("=============================================\n");
-    printf("=       Tekan enter untuk melanjutkan       =\n");
+    printf("=       Tekan ENTER Untuk Melanjutkan       =\n");
     printf("=============================================");
     getchar();
 
     char userLog[20], passLog[20];
-    printf("Masukkan username :");
+    printf("Masukkan Username :");
     fgets(userLog, sizeof(userLog), stdin);
 
-    printf("Masukkan password :");
+    printf("Masukkan Password :");
     fgets(passLog, sizeof(passLog), stdin);
 
     char userLogin[10], passLogin[10];
@@ -100,7 +100,7 @@ int main (int banyakArgumen, char *argumen[]) {
         printf("\n\n=============================================\n");    
         printf("=        SELAMAT ANDA BERHASIL LOGIN!       =\n");
         printf("=============================================\n");
-        printf("=  Tekan enter untuk melanjutkan permainan  =\n");
+        printf("=  Tekan ENTER Untuk Melanjutkan Permainan  =\n");
         printf("=============================================\n");
         getchar();
         tampilkanMenu();
@@ -122,7 +122,7 @@ void tampilanAwal() {
     printf("=      WHO WANTS TO BE A MILLIONAIRE       =\n");
     printf("============================================\n");
     printf("=                                          =\n");
-    printf("= Tekan enter untuk melanjutkan registrasi =\n");
+    printf("= Tekan ENTER Untuk Melanjutkan Registrasi =\n");
     printf("=                                          =\n");
     printf("============================================");
     getchar();
@@ -130,7 +130,7 @@ void tampilanAwal() {
 
 void tampilkanMenu() {
     printf("=============================================\n");
-    printf("=              🎮 MENU UTAMA 🎮             =\n");
+    printf("=              🎮 MENU UTAMA 🎮            =\n");
     printf("=============================================\n");
     printf("=  1️⃣  Lanjutkan Permainan                  =\n");
     printf("=  2️⃣  Keluar dari Permainan                =\n");
@@ -160,7 +160,7 @@ void tampilkanMenu() {
 
 void lanjutkanPermainan() {
     printf("\n=============================================\n");
-    printf("=       Anda memilih untuk melanjutkan!     =\n");
+    printf("=       Anda Memilih untuk Melanjutkan!     =\n");
     printf("=============================================\n");
     switch (level) {
         case 1:
@@ -185,42 +185,42 @@ void lanjutkanPermainan() {
             pertanyaan7();
             break;
         default:
-            printf("âŒ Pertanyaan untuk level %d belum tersedia!\n", level);
+            printf("âŒ Pertanyaan untuk Level %d BELUM TERSEDIA!\n", level);
     }
 }
     
 void keluarPermainan() {
     printf("\n=============================================\n");
-    printf("=       Terima kasih telah bermain!         =\n");
+    printf("=       Terima Kasih Telah Bermain!         =\n");
     printf("=============================================\n");
-    printf("ðŸ‘‹ Sampai jumpa lagi!\n");
+    printf("ðŸ‘‹ Sampai Jumpa Lagi!\n");
 }
 
 void restartPermainan() {
     printf("\n=============================================\n");
-    printf("=       Permainan telah di-restart!         =\n");
+    printf("=       Permainan Telah di-Restart!         =\n");
     printf("=============================================\n");
     score = 0; 
     level = 1;
-    printf("ðŸŒŸ Skor Anda sekarang: %d\n", score);
+    printf("ðŸŒŸ Skor Anda Sekarang: %d\n", score);
     getchar();
     pertanyaan1();
 }
 
 void benar () {
     printf("============================================\n");
-    printf("=         selamat jawaban anda benar       =\n");
+    printf("=         Selamat Jawaban Anda Benar       =\n");
     printf("============================================\n");
     score += 100;
-    printf("🌟 Skor Anda sekarang: %d", score);
+    printf("🌟 Skor Anda Sekarang: %d", score);
     getchar();
 }
 
 void salah() {
     printf("============================================\n");
-    printf("=            Jawaban Anda salah            =\n");
+    printf("=            Jawaban Anda SALAH!           =\n");
     printf("============================================\n");
-    printf("🌟 Skor total anda : %d\n", score);
+    printf("🌟 Skor Total Anda : %d\n", score);
     printf("============================================\n\n");
 }
 
@@ -228,7 +228,7 @@ void gameover() {
     printf("============================================\n");
     printf("=                 GAME OVER                =\n");
     printf("============================================\n");
-    printf("=        Terima kasih telah bermain!       =\n");
+    printf("=        Terima Kasih Telah Bermain!       =\n");
     printf("============================================\n");
 }
 
