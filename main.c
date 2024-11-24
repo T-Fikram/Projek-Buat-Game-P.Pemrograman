@@ -12,6 +12,8 @@ void tampilkanMenu();
 void lanjutkanPermainan();
 void keluarPermainan();
 void restartPermainan();
+void benar();
+void salah();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -183,3 +185,19 @@ void tampilkanMenu() {
         pertanyaan1();
     }
 
+    void benar () {
+        printf("============================================\n");
+        printf("=         selamat jawaban anda benar       =\n");
+        printf("============================================\n");
+        score += 100;
+        printf("🌟 Skor Anda sekarang: %d", score);
+        getchar();
+    }
+
+    void salah() {
+        printf("============================================\n");
+        printf("=            Jawaban Anda salah            =\n");
+        printf("============================================\n");
+        printf("🌟 Skor total anda : %d\n", score);
+        printf("============================================\n\n");
+    }
