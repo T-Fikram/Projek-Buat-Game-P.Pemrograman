@@ -39,11 +39,11 @@ int main (int banyakArgumen, char *argumen[]) {
 
     char username[50], password[50];
 
-    printf("Masukkan Username :");
+    printf("Masukkan Username : ");
     fgets(username, sizeof(username), stdin);
     username[strcspn(username, "\n")] = '\0';
     
-    printf("Masukkan Password :");
+    printf("Masukkan Password : ");
     fgets(password, sizeof(password), stdin);
     password[strcspn(password, "\n")] = '\0';
 
@@ -86,10 +86,10 @@ int main (int banyakArgumen, char *argumen[]) {
     getchar();
 
     char userLog[20], passLog[20];
-    printf("Masukkan Username :");
+    printf("Masukkan Username : ");
     fgets(userLog, sizeof(userLog), stdin);
 
-    printf("Masukkan Password :");
+    printf("Masukkan Password : ");
     fgets(passLog, sizeof(passLog), stdin);
 
     char userLogin[10], passLogin[10];
@@ -98,7 +98,7 @@ int main (int banyakArgumen, char *argumen[]) {
 
     if((strcmp(userLogin, user)) == 0 && (strcmp(passLogin, pass) == 0)) {
         printf("\n\n=============================================\n");    
-        printf("=        SELAMAT ANDA BERHASIL LOGIN!       =\n");
+        printf("=            ANDA BERHASIL LOGIN!           =\n");
         printf("=============================================\n");
         printf("=  Tekan ENTER Untuk Melanjutkan Permainan  =\n");
         printf("=============================================\n");
@@ -209,7 +209,7 @@ void restartPermainan() {
 
 void benar () {
     printf("============================================\n");
-    printf("=         Selamat, Jawaban Anda Benar      =\n");
+    printf("=         Selamat, Jawaban Anda Benar!     =\n");
     printf("============================================\n");
     score += 100;
     printf("🌟 Skor Anda Sekarang: %d", score);
@@ -218,7 +218,7 @@ void benar () {
 
 void salah() {
     printf("============================================\n");
-    printf("=         Waduh, Jawaban Anda SALAH        =\n");
+    printf("=         Waduh, Jawaban Anda SALAH!       =\n");
     printf("============================================\n");
     printf("🌟 Skor Total Anda : %d\n", score);
     printf("============================================\n\n");
@@ -234,7 +234,7 @@ void gameover() {
 
 void pertanyaan1() {
     printf("1. Apa Warna Lidah Jerapah?\n");
-    printf("a. PINK\tb. BIRU TUA\nc. HIJAU\td. KUNING\n");
+    printf("a. PINK\t\tb. BIRU TUA\nc. HIJAU\td. KUNING\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
@@ -252,7 +252,7 @@ void pertanyaan1() {
 
 void pertanyaan2() {
     printf("2. Negara Mana yang Tidak Memiliki Ular Sama Sekali?\n");
-    printf("a. MEKSIKO\tb.  ISLANDIA\nc. BRAZIL\td. KANADA\n");
+    printf("a. MEKSIKO\tb. ISLANDIA\nc. BRAZIL\td. KANADA\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
@@ -290,7 +290,7 @@ void pertanyaan2() {
 
  void pertanyaan4() {
     printf("4. Hewan Apa yang Dikenal Sebagai Predator Terbesar di Lautan?\n");
-    printf("a. PAUS PEMBUNUH\tb.  HIU PUTIH BESAR\nc. UBUR-UBUR RAKSASA\td. ANEMON LAUT\n");
+    printf("a. PAUS PEMBUNUH\tb. HIU PUTIH BESAR\nc. UBUR-UBUR RAKSASA\td. ANEMON LAUT\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
@@ -328,7 +328,7 @@ void pertanyaan5() {
     
 void pertanyaan6() {
     printf("6. Apa Nama Serangga yang Bisa Bertahan Hidup di Bawah Air Selama Berminggu-minggu??\n");
-    printf("a. CAPUNG\tb.  KEPIK\nc. WATER BEETLE\td. BELALANG\n");
+    printf("a. CAPUNG\tb. KEPIK\nc. WATER BEETLE\td. BELALANG\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
@@ -347,7 +347,7 @@ void pertanyaan6() {
         
 void pertanyaan7() {
     printf("Hewan Apa yang Memiliki Jantung Terbesar di Dunia?\n");
-    printf("a. GAJAH\tb. PAUS BIRU\nc. HIU\td. BADAK\n");
+    printf("a. GAJAH\tb. PAUS BIRU\nc. HIU\t\td. BADAK\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
@@ -362,6 +362,3 @@ void pertanyaan7() {
         gameover();
     }
 }
-
-
-
