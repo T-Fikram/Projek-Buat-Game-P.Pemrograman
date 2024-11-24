@@ -5,7 +5,7 @@
 
 int score = 0;
 int level = 1;
-
+    
 void tampilanAwal();
 void tampilkanMenu();
 void lanjutkanPermainan();
@@ -13,7 +13,6 @@ void keluarPermainan();
 void restartPermainan();
 void benar();
 void salah();
-void gameover();
 void pertanyaan1();
 void pertanyaan2();
 void pertanyaan3();
@@ -21,6 +20,7 @@ void pertanyaan4();
 void pertanyaan5();
 void pertanyaan6();
 void pertanyaan7();
+void win();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -97,7 +97,7 @@ int main (int banyakArgumen, char *argumen[]) {
     strcpy(passLogin, argumen[2]);
 
     if((strcmp(userLogin, user)) == 0 && (strcmp(passLogin, pass) == 0)) {
-        printf("\n\n=============================================\n");    
+        printf("=============================================\n");    
         printf("=            ANDA BERHASIL LOGIN!           =\n");
         printf("=============================================\n");
         printf("=  Tekan ENTER Untuk Melanjutkan Permainan  =\n");
@@ -129,19 +129,17 @@ void tampilanAwal() {
 }
 
 void tampilkanMenu() {
-    printf("=============================================\n");
+    printf("\n=============================================\n");
     printf("=              🎮 MENU UTAMA 🎮            =\n");
     printf("=============================================\n");
     printf("=  1️⃣  Lanjutkan Permainan                  =\n");
     printf("=  2️⃣  Keluar dari Permainan                =\n");
     printf("=  3️⃣  Restart Permainan                    =\n");
     printf("=============================================\n");
-    printf("🌟 SKOR ANDA Saat Ini: %d\n", score);
-    printf("=============================================\n");
     printf("👉 Pilih Opsi Anda (1/2/3): ");
     int pilihan;
     scanf("%d", &pilihan);
-    getchar(); 
+    getchar();
         switch (pilihan) {
             case 1:
                 lanjutkanPermainan();
@@ -153,9 +151,8 @@ void tampilkanMenu() {
                 restartPermainan();
                 break;
             default:
-                printf("❌ Pilihan Tidak Valid. Silakan Coba Lagi!\n");
+                printf("❌ Pilihan Tidak Valid.\n");
         }
-
 }
 
 void lanjutkanPermainan() {
@@ -185,7 +182,7 @@ void lanjutkanPermainan() {
             pertanyaan7();
             break;
         default:
-            printf("âŒ Pertanyaan untuk Level %d BELUM TERSEDIA!\n", level);
+            printf("❌ Pertanyaan untuk Level %d BELUM TERSEDIA!\n", level);
     }
 }
     
@@ -193,7 +190,7 @@ void keluarPermainan() {
     printf("\n=============================================\n");
     printf("=       Terima Kasih Telah Bermain!         =\n");
     printf("=============================================\n");
-    printf("ðŸ‘‹ Sampai Jumpa Lagi!\n");
+    printf("👋 Sampai Jumpa Lagi!\n");
 }
 
 void restartPermainan() {
@@ -202,7 +199,7 @@ void restartPermainan() {
     printf("=============================================\n");
     score = 0; 
     level = 1;
-    printf("ðŸŒŸ Skor Anda Sekarang: %d\n", score);
+    printf("🌟 Skor Anda Sekarang: %d\n", score);
     getchar();
     pertanyaan1();
 }
@@ -221,10 +218,6 @@ void salah() {
     printf("=         Waduh, Jawaban Anda SALAH!       =\n");
     printf("============================================\n");
     printf("🌟 Skor Total Anda : %d\n", score);
-    printf("============================================\n\n");
-}
-
-void gameover() {
     printf("============================================\n");
     printf("=                 GAME OVER                =\n");
     printf("============================================\n");
@@ -232,8 +225,19 @@ void gameover() {
     printf("============================================\n");
 }
 
+void win() {
+    printf("\n============================================\n");
+    printf("Selamat anda berhasil menyelasaikan kuis ini\n");
+    printf("             Victory is yours!              \n");
+    printf("============================================\n");
+    printf("🌟 Skor Total Anda : %d\n", score);
+    printf("============================================\n");
+    printf("=        Terima Kasih Telah Bermain!       =\n");
+    printf("============================================\n");
+}
+
 void pertanyaan1() {
-    printf("1. Apa Warna Lidah Jerapah?\n");
+    printf("\n1. Apa Warna Lidah Jerapah?\n");
     printf("a. PINK\t\tb. BIRU TUA\nc. HIJAU\td. KUNING\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
@@ -245,13 +249,11 @@ void pertanyaan1() {
         tampilkanMenu();
     } else {
         salah();
-        getchar();
-        gameover();
     }
 }
 
 void pertanyaan2() {
-    printf("2. Negara Mana yang Tidak Memiliki Ular Sama Sekali?\n");
+    printf("\n2. Negara Mana yang Tidak Memiliki Ular Sama Sekali?\n");
     printf("a. MEKSIKO\tb. ISLANDIA\nc. BRAZIL\td. KANADA\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
@@ -260,17 +262,14 @@ void pertanyaan2() {
     if (answer == 'b' || answer == 'B') {
         level++;
         benar();
-        getchar();
         tampilkanMenu();
     } else {
         salah();
-        getchar();
-        gameover();
     }
 }
 
  void pertanyaan3() {
-    printf("3. Di Negara Manakah, Sapi Dianggap Sebagai Hewan Suci?\n");
+    printf("\n3. Di Negara Manakah, Sapi Dianggap Sebagai Hewan Suci?\n");
     printf("a. JEPANG\tb. AUSTRALIA\nc. INDONESIA\td. INDIA\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
@@ -279,17 +278,14 @@ void pertanyaan2() {
     if (answer == 'd' || answer == 'D') {
         level++;
         benar();
-        getchar();
         tampilkanMenu();
     } else {
         salah();
-        getchar();
-        gameover();
     }
 }
 
  void pertanyaan4() {
-    printf("4. Hewan Apa yang Dikenal Sebagai Predator Terbesar di Lautan?\n");
+    printf("\n4. Hewan Apa yang Dikenal Sebagai Predator Terbesar di Lautan?\n");
     printf("a. PAUS PEMBUNUH\tb. HIU PUTIH BESAR\nc. UBUR-UBUR RAKSASA\td. ANEMON LAUT\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
@@ -298,17 +294,14 @@ void pertanyaan2() {
     if (answer == 'a' || answer == 'A') {
         level++;
         benar();
-        getchar();
         tampilkanMenu();
     } else {
         salah();
-        getchar();
-        gameover();
     }
 }
 
 void pertanyaan5() {
-    printf("5. Hewan Apa yang Menghasilkan Tinta Sebagai Mekanisme Pertahanan?\n");
+    printf("\n5. Hewan Apa yang Menghasilkan Tinta Sebagai Mekanisme Pertahanan?\n");
     printf("a. NYAMUK\tb. AYAM\nc. UDANG\td. CUMI-CUMI\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
@@ -317,17 +310,14 @@ void pertanyaan5() {
     if (answer == 'd' || answer == 'D') {
         level++;
         benar();
-        getchar();
         tampilkanMenu();
     } else {
         salah();
-        getchar();
-        gameover();
     }
 } 
     
 void pertanyaan6() {
-    printf("6. Apa Nama Serangga yang Bisa Bertahan Hidup di Bawah Air Selama Berminggu-minggu??\n");
+    printf("\n6. Apa Nama Serangga yang Bisa Bertahan Hidup di Bawah Air Selama Berminggu-minggu??\n");
     printf("a. CAPUNG\tb. KEPIK\nc. WATER BEETLE\td. BELALANG\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
@@ -336,17 +326,14 @@ void pertanyaan6() {
     if (answer == 'c' || answer == 'C') {
         level++;
         benar();
-        getchar();
         tampilkanMenu();
     } else {
         salah();
-        getchar();
-        gameover();
     }
 }
         
 void pertanyaan7() {
-    printf("Hewan Apa yang Memiliki Jantung Terbesar di Dunia?\n");
+    printf("\n7. Hewan Apa yang Memiliki Jantung Terbesar di Dunia?\n");
     printf("a. GAJAH\tb. PAUS BIRU\nc. HIU\t\td. BADAK\n");
     printf("Masukkan Jawaban Anda: ");
     char answer;
@@ -355,10 +342,8 @@ void pertanyaan7() {
         level++;
         benar();
         getchar();
-        tampilkanMenu();
+        win();
     } else {
         salah();
-        getchar();
-        gameover();
     }
 }
