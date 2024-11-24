@@ -16,7 +16,8 @@ void salah();
 void gameover();
 void pertanyaan1();
 void pertanyaan2();
-viod pertanyaan3();
+void pertanyaan3();
+void pertanyaan4();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
