@@ -15,6 +15,7 @@ void restartPermainan();
 void benar();
 void salah();
 void gameover();
+void pertanyaan1();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -209,5 +210,22 @@ void tampilkanMenu() {
         printf("============================================\n");
         printf("=        Terima kasih telah bermain!       =\n");
         printf("============================================\n");
+    }
+
+    void pertanyaan1() {
+        printf("1. Apa Warna Lidah Jerapah?\n");
+        printf("a. Pink\tb. Biru tua\nc. Hijau\td. Kuning\n");
+        printf("Masukkan jawaban Anda: ");
+        char answer;
+        scanf(" %c", &answer);
+        if (answer == 'b' || answer == 'B') {
+            level++;
+            benar();
+            getchar();
+            tampilkanMenu();
+        } else {
+            salah();
+            gameover();
+        }
     }
 
