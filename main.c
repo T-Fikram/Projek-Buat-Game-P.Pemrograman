@@ -241,6 +241,7 @@ void tampilkanMenu() {
         if (answer == 'b' || answer == 'B') {
             level++;
             benar();
+            getchar();
             tampilkanMenu();
         } else {
             salah();
@@ -256,6 +257,25 @@ void tampilkanMenu() {
         scanf(" %c", &answer);
         getchar(); 
         if (answer == 'b' || answer == 'B') {
+            level++;
+            benar();
+            getchar();
+            tampilkanMenu();
+        } else {
+            salah();
+            getchar();
+            gameover();
+        }
+    }
+
+ void pertanyaan4() {
+        printf("4. Hewan apa yang dikenal sebagai predator terbesar di lautan?\n");
+        printf("a. Paus pembunuh\tb.  Hiu putih besar\nc. Ubur-ubur raksasa\td. Anemon Laut\n");
+        printf("Masukkan jawaban Anda: ");
+        char answer;
+        scanf(" %c", &answer);
+        getchar(); 
+        if (answer == 'a' || answer == 'A') {
             level++;
             benar();
             getchar();
