@@ -18,7 +18,9 @@ void pertanyaan1();
 void pertanyaan2();
 void pertanyaan3();
 void pertanyaan4();
-void pertanyaan5
+void pertanyaan5();
+void pertanyaan6();
+void pertanyaan7();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -306,6 +308,24 @@ void pertanyaan5() {
             getchar();
             gameover();
         }
+    } void pertanyaan6() {
+        printf("6. Apa nama serangga yang bisa bertahan hidup di bawah air selama berminggu-minggu??\n");
+        printf("a. Capung\tb.  Kepik\nc. Water Beetle\td. Habib Nuran Mulkan\n");
+        printf("Masukkan jawaban Anda: ");
+        char answer;
+        scanf(" %c", &answer);
+        getchar(); 
+        if (answer == 'c' || answer == 'C') {
+            level++;
+            benar();
+            getchar(;)
+            tampilkanMenu();
+        } else {
+            salah();
+            getchar();
+            gameover();
+        }
     }
+
 
 
