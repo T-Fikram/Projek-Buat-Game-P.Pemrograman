@@ -8,7 +8,10 @@ int score = 0;
 int level = 1;
 
 void tampilanAwal();
-void selamatDatang();
+void tampilkanMenu();
+void lanjutkanPermainan();
+void keluarPermainan();
+void restartPermainan();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
