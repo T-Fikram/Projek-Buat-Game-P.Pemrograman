@@ -26,51 +26,51 @@ int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
 
     if (banyakArgumen != 3) {
-        printf("Harus terdapat 3 Argumen saat menjalankan program!\n");
-        printf("Cara penggunaan : ./main Username Password!\n");
+        printf("Harus Terdapat 3 ARGUMEN Saat Menjalankan Program!\n");
+        printf("Cara Penggunaan : ./main Username Password!\n");
         return 1;
     }
 
     FILE *fpw = fopen("database/login.bin","wb");
     if (fpw == NULL) {
-        printf("gagal membuka file!");
+        printf("GAGAL Membuka File!");
         return EXIT_FAILURE;
     }
 
-    char username[50],password[50];
+    char username[50], password[50];
 
     printf("Masukkan Username :");
-    fgets(username,sizeof(username),stdin);
+    fgets(username, sizeof(username), stdin);
     username[strcspn(username, "\n")] = '\0';
     
     printf("Masukkan Password :");
-    fgets(password,sizeof(password),stdin);
+    fgets(password, sizeof(password), stdin);
     password[strcspn(password, "\n")] = '\0';
 
     strcat(username, "@");
-    strcat(username,password);
+    strcat(username, password);
 
-    fwrite(username,sizeof(char),sizeof(username)/sizeof(char),fpw);
+    fwrite(username, sizeof(char), sizeof(username)/sizeof(char), fpw);
 
     fclose(fpw);
 
-    FILE *fpr = fopen("database/login.bin","rb");
+    FILE *fpr = fopen("database/login.bin", "rb");
 
     if (fpr == NULL) {
-        printf("gagal membuka file!");
+        printf("GAGAL Membuka File!");
         return EXIT_FAILURE;
     }
 
-    fread(username,sizeof(char),sizeof(username)/sizeof(char),fpr);
+    fread(username, sizeof(char), sizeof(username)/sizeof(char), fpr);
 
     fclose(fpr);
     char *string[3];
     char user[50], pass[50];
     int ctrl = 0;
 
-    string[0] = strtok(username,"@");
+    string[0] = strtok(username, "@");
     while(string[ctrl++] != NULL) {
-        string[ctrl] = strtok(NULL,"@");
+        string[ctrl] = strtok(NULL, "@");
     }
 
     strcpy(user, string[0]);
@@ -79,9 +79,9 @@ int main (int banyakArgumen, char *argumen[]) {
     printf("=============================================\n");
     printf("=         Registrasi Anda Berhasil          =\n");
     printf("=============================================\n");
-    printf("=  Silahkan Login Untuk Memulai Permainan!   =\n");
+    printf("=  Silahkan Login untuk Memulai Permainan!  =\n");
     printf("=============================================\n");
-    printf("=       Tekan ENTER Untuk Melanjutkan       =\n");
+    printf("=       Tekan ENTER untuk Melanjutkan       =\n");
     printf("=============================================");
     getchar();
 
@@ -93,8 +93,8 @@ int main (int banyakArgumen, char *argumen[]) {
     fgets(passLog, sizeof(passLog), stdin);
 
     char userLogin[10], passLogin[10];
-    strcpy(userLogin,argumen[1]);
-    strcpy(passLogin,argumen[2]);
+    strcpy(userLogin, argumen[1]);
+    strcpy(passLogin, argumen[2]);
 
     if((strcmp(userLogin, user)) == 0 && (strcmp(passLogin, pass) == 0)) {
         printf("\n\n=============================================\n");    
@@ -136,9 +136,9 @@ void tampilkanMenu() {
     printf("=  2️⃣  Keluar dari Permainan                =\n");
     printf("=  3️⃣  Restart Permainan                    =\n");
     printf("=============================================\n");
-    printf("🌟 Skor Anda Saat Ini: %d\n", score);
+    printf("🌟 SKOR ANDA Saat Ini: %d\n", score);
     printf("=============================================\n");
-    printf("👉 Pilih opsi Anda (1/2/3): ");
+    printf("👉 Pilih Opsi Anda (1/2/3): ");
     int pilihan;
     scanf("%d", &pilihan);
     getchar(); 
@@ -153,7 +153,7 @@ void tampilkanMenu() {
                 restartPermainan();
                 break;
             default:
-                printf("❌ Pilihan tidak valid. Silakan coba lagi!\n");
+                printf("❌ Pilihan Tidak Valid. Silakan Coba Lagi!\n");
         }
 
 }
@@ -209,7 +209,7 @@ void restartPermainan() {
 
 void benar () {
     printf("============================================\n");
-    printf("=         Selamat Jawaban Anda Benar       =\n");
+    printf("=         Selamat, Jawaban Anda Benar      =\n");
     printf("============================================\n");
     score += 100;
     printf("🌟 Skor Anda Sekarang: %d", score);
@@ -218,7 +218,7 @@ void benar () {
 
 void salah() {
     printf("============================================\n");
-    printf("=            Jawaban Anda SALAH!           =\n");
+    printf("=         Waduh, Jawaban Anda SALAH        =\n");
     printf("============================================\n");
     printf("🌟 Skor Total Anda : %d\n", score);
     printf("============================================\n\n");
@@ -234,8 +234,8 @@ void gameover() {
 
 void pertanyaan1() {
     printf("1. Apa Warna Lidah Jerapah?\n");
-    printf("a. Pink\tb. Biru tua\nc. Hijau\td. Kuning\n");
-    printf("Masukkan jawaban Anda: ");
+    printf("a. PINK\tb. BIRU TUA\nc. HIJAU\td. KUNING\n");
+    printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
     if (answer == 'b' || answer == 'B') {
@@ -251,9 +251,9 @@ void pertanyaan1() {
 }
 
 void pertanyaan2() {
-    printf("2. Negara mana yang tidak memiliki ular sama sekali?\n");
-    printf("a. Norwegia\tb.  Islandia\nc. Finlandia\td. Kanada\n");
-    printf("Masukkan jawaban Anda: ");
+    printf("2. Negara Mana yang Tidak Memiliki Ular Sama Sekali?\n");
+    printf("a. MEKSIKO\tb.  ISLANDIA\nc. BRAZIL\td. KANADA\n");
+    printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
     getchar(); 
@@ -270,13 +270,13 @@ void pertanyaan2() {
 }
 
  void pertanyaan3() {
-    printf("3. Hewan apa yang bisa menggulung tubuhnya menjadi bola?\n");
-    printf("a. Landak\tb. Trenggiling\nc. Siput\td. armadillo\n");
-    printf("masukan jawaban anda: ");
+    printf("3. Di Negara Manakah, Sapi Dianggap Sebagai Hewan Suci?\n");
+    printf("a. JEPANG\tb. AUSTRALIA\nc. INDONESIA\td. INDIA\n");
+    printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
     getchar(); 
-    if (answer == 'b' || answer == 'B') {
+    if (answer == 'd' || answer == 'D') {
         level++;
         benar();
         getchar();
@@ -289,9 +289,9 @@ void pertanyaan2() {
 }
 
  void pertanyaan4() {
-    printf("4. Hewan apa yang dikenal sebagai predator terbesar di lautan?\n");
-    printf("a. Paus pembunuh\tb.  Hiu putih besar\nc. Ubur-ubur raksasa\td. Anemon Laut\n");
-    printf("Masukkan jawaban Anda: ");
+    printf("4. Hewan Apa yang Dikenal Sebagai Predator Terbesar di Lautan?\n");
+    printf("a. PAUS PEMBUNUH\tb.  HIU PUTIH BESAR\nc. UBUR-UBUR RAKSASA\td. ANEMON LAUT\n");
+    printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
     getchar(); 
@@ -308,13 +308,13 @@ void pertanyaan2() {
 }
 
 void pertanyaan5() {
-    printf("5. Hewan apa yang menghasilkan tinta sebagai mekanisme pertahanan?\n");
-    printf("a. Cumi-cumi\tb. Ayam\nc. Udang\td. Ikan pari\n");
-    printf("masukan jawaban anda: ");
+    printf("5. Hewan Apa yang Menghasilkan Tinta Sebagai Mekanisme Pertahanan?\n");
+    printf("a. NYAMUK\tb. AYAM\nc. UDANG\td. CUMI-CUMI\n");
+    printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
     getchar(); 
-    if (answer == 'a' || answer == 'A') {
+    if (answer == 'd' || answer == 'D') {
         level++;
         benar();
         getchar();
@@ -327,9 +327,9 @@ void pertanyaan5() {
 } 
     
 void pertanyaan6() {
-    printf("6. Apa nama serangga yang bisa bertahan hidup di bawah air selama berminggu-minggu??\n");
-    printf("a. Capung\tb.  Kepik\nc. Water Beetle\td. Belalang\n");
-    printf("Masukkan jawaban Anda: ");
+    printf("6. Apa Nama Serangga yang Bisa Bertahan Hidup di Bawah Air Selama Berminggu-minggu??\n");
+    printf("a. CAPUNG\tb.  KEPIK\nc. WATER BEETLE\td. BELALANG\n");
+    printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
     getchar(); 
@@ -346,9 +346,9 @@ void pertanyaan6() {
 }
         
 void pertanyaan7() {
-    printf("Hewan apa yang memiliki jantung terbesar di dunia?\n");
-    printf("a. Gajah\tb. Paus biru\nc. Hiu\td. Badak\n");
-    printf("Masukkan jawaban Anda: ");
+    printf("Hewan Apa yang Memiliki Jantung Terbesar di Dunia?\n");
+    printf("a. GAJAH\tb. PAUS BIRU\nc. HIU\td. BADAK\n");
+    printf("Masukkan Jawaban Anda: ");
     char answer;
     scanf(" %c", &answer);
     if (answer == 'b' || answer == 'B') {
