@@ -169,6 +169,21 @@ void lanjutkanPermainan() {
         case 2:
             pertanyaan2();
             break;
+        case 3:
+            pertanyaan3();
+            break;
+        case 4:
+            pertanyaan4();
+            break;
+        case 5:
+            pertanyaan5();
+            break;
+        case 6:
+            pertanyaan6();
+            break;
+        case 7:
+            pertanyaan7();
+            break;
         default:
             printf("âŒ Pertanyaan untuk level %d belum tersedia!\n", level);
     }
