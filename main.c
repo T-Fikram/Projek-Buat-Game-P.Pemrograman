@@ -16,6 +16,7 @@ void salah();
 void gameover();
 void pertanyaan1();
 void pertanyaan2();
+viod pertanyaan3();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -247,4 +248,23 @@ void tampilkanMenu() {
             gameover();
         }
     }
+ void pertanyaan3() {
+        printf("3. Hewan apa yang bisa menggulung tubuhnya menjadi bola?\n");
+        printf("a. Landak\tb. Trenggiling\nc. Siput\td. armadillo\n");
+        printf("masukan jawaban anda: ");
+        char answer;
+        scanf(" %c", &answer);
+        getchar(); 
+        if (answer == 'b' || answer == 'B') {
+            level++;
+            benar();
+            getchar();
+            tampilkanMenu();
+        } else {
+            salah();
+            getchar();
+            gameover();
+        }
+    }
+
 
