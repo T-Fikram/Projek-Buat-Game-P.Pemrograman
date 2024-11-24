@@ -14,6 +14,7 @@ void keluarPermainan();
 void restartPermainan();
 void benar();
 void salah();
+void gameover();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -201,3 +202,12 @@ void tampilkanMenu() {
         printf("🌟 Skor total anda : %d\n", score);
         printf("============================================\n\n");
     }
+
+    void gameover() {
+        printf("============================================\n");
+        printf("=                 GAME OVER                =\n");
+        printf("============================================\n");
+        printf("=        Terima kasih telah bermain!       =\n");
+        printf("============================================\n");
+    }
+
