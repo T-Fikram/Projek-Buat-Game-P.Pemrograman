@@ -103,7 +103,7 @@ int main (int banyakArgumen, char *argumen[]) {
         printf("=  Tekan enter untuk melanjutkan permainan  =\n");
         printf("=============================================\n");
         getchar();
-
+        tampilkanMenu():
     } else {
         printf("=============================================\n");    
         printf("=             ANDA GAGAL LOGIN!             =\n");
