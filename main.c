@@ -310,7 +310,7 @@ void pertanyaan5() {
         }
     } void pertanyaan6() {
         printf("6. Apa nama serangga yang bisa bertahan hidup di bawah air selama berminggu-minggu??\n");
-        printf("a. Capung\tb.  Kepik\nc. Water Beetle\td. Habib Nuran Mulkan\n");
+        printf("a. Capung\tb.  Kepik\nc. Water Beetle\td. Belalang\n");
         printf("Masukkan jawaban Anda: ");
         char answer;
         scanf(" %c", &answer);
@@ -318,7 +318,23 @@ void pertanyaan5() {
         if (answer == 'c' || answer == 'C') {
             level++;
             benar();
-            getchar(;)
+            getchar();
+            tampilkanMenu();
+        } else {
+            salah();
+            getchar();
+            gameover();
+        }
+          void pertanyaan7() {
+        printf("Hewan apa yang memiliki jantung terbesar di dunia?\n");
+        printf("a. Gajah\tb. Paus biru\nc. Hiu\td. Badak\n");
+        printf("Masukkan jawaban Anda: ");
+        char answer;
+        scanf(" %c", &answer);
+        if (answer == 'b' || answer == 'B') {
+            level++;
+            benar();
+            getchar();
             tampilkanMenu();
         } else {
             salah();
