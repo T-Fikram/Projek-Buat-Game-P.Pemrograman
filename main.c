@@ -2,7 +2,6 @@
 #include <string.h>
 #include <stdlib.h>
 #include <ctype.h>
-#include <time.h>
 
 int score = 0;
 int level = 1;
@@ -16,6 +15,7 @@ void benar();
 void salah();
 void gameover();
 void pertanyaan1();
+void pertanyaan2();
 
 int main (int banyakArgumen, char *argumen[]) {
     tampilanAwal();
@@ -222,6 +222,24 @@ void tampilkanMenu() {
             level++;
             benar();
             getchar();
+            tampilkanMenu();
+        } else {
+            salah();
+            getchar();
+            gameover();
+        }
+    }
+
+    void pertanyaan2() {
+        printf("2. Negara mana yang tidak memiliki ular sama sekali?\n");
+        printf("a. Norwegia\tb.  Islandia\nc. Finlandia\td. Kanada\n");
+        printf("Masukkan jawaban Anda: ");
+        char answer;
+        scanf(" %c", &answer);
+        getchar(); 
+        if (answer == 'b' || answer == 'B') {
+            level++;
+            benar();
             tampilkanMenu();
         } else {
             salah();
