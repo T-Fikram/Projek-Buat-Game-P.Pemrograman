@@ -64,6 +64,7 @@ int main (int banyakArgumen, char *argumen[]) {
     fread(username, sizeof(char), sizeof(username)/sizeof(char), fpr);
 
     fclose(fpr);
+    
     char *token = strtok(username, "@");
     char user[50], pass[50];
     strcpy(user, token);          
@@ -219,8 +220,8 @@ void salah() {
 
 void win() {
     printf("\n============================================\n");
-    printf("Selamat anda berhasil menyelasaikan kuis ini\n");
-    printf("             Victory is yours!              \n");
+    printf("Selamat Anda berhasil Menyelesaikan Kuis Ini\n");
+    printf("             VICTORY IS YOURS!              \n");
     printf("============================================\n");
     printf("🌟 Skor Total Anda : %d\n", score);
     printf("============================================\n");
